@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        ruby: [jruby]
+        ruby: [2.6, 2.7, 3.0, 3.1, jruby]
 
     runs-on: ${{ matrix.os }}
 
@@ -27,9 +27,6 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-
-      - name: Test JRuby command
-        run: jruby -e "puts \"JRuby exists: #{defined?(JRuby) ? 'yes' : 'no'}\""
 
       - name: Rubocop lint
         run: bundle exec rubocop
