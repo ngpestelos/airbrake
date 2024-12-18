@@ -28,7 +28,7 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
 
-      - name: Test JRuby
+      - name: Test JRuby command
         run: jruby -e "puts \"JRuby exists: #{defined?(JRuby) ? 'yes' : 'no'}\""
 
       - name: Rubocop lint
