@@ -23,6 +23,9 @@ jobs:
       - name: Install cURL Headers
         run: sudo apt-get install libcurl4 libcurl4-openssl-dev
 
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: ${{ matrix.ruby }}
